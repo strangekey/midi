@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="midi" default="dist" basedir=".">
+
+	<property name="src" location="src/main/java"/>
+	<property name="test" location="src/test/java"/>
+	<property name="build" location="build"/>
+	<property name="dist"  location="dist"/>
+	
+	<target name="init">
+		<mkdir dir="${build}"/>
+		<mkdir dir="${dist}"/>
+	</target>
+	
+	<target name="compile" depends="init" description="compile source" >
+		<javac srcdir="${src}" destdir="${build}" nowarn="true" debug="true" debuglevel="lines,vars,source" />
+	</target>
+	
+	<target name="dist" depends="compile" description="generate jar" >
+    	<mkdir dir="${dist}"/>
+    	<jar jarfile="${dist}/midi.jar" basedir="${build}" />
+	</target>
+	
+	<target name="clean" description="clean up" >
+    	<delete dir="${build}"/>
+    	<delete dir="${dist}"/>
+	</target>
+	
+</project>
