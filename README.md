@@ -7,7 +7,7 @@ Contains the basic midi messages supported by GM MIDI.
 
 *Message Support*
 
-** Channel Messages **
+**Channel Messages**
 
 * Note On/Note Off (144/128)
 * Control Change (176)
